@@ -6,7 +6,7 @@ import Button from '@mui/material/Button'
 const Navbar = () => {
   return (
     <div className='navContainer'>
-        <Logo/>
+        <Logo className="logo"/>
         <div className='pagesDesktop'>
             <Link to="/resources">Resources</Link>
             <Link to="/pricing">Pricing</Link>
