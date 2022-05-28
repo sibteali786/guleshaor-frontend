@@ -1,0 +1,33 @@
+@import "../../components/Utils/config.scss";
+.Faq-container{
+    position: relative;
+    background-color:$tertiaryColor;
+    height:50vh;
+    font-family: $fontfmily1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2{
+        color:#F8F9FA;
+    }
+    .custom-shape-divider-top-1653762327 {
+        position: absolute;
+        top: 50vh;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1653762327 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 75px;
+}
+
+.custom-shape-divider-top-1653762327 .shape-fill {
+    fill: #252C33;
+}
+    }

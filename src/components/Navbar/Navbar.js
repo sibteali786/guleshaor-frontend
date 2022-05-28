@@ -12,7 +12,7 @@ const Navbar = () => {
             <Link to="/pricing">Pricing</Link>
             <Link to="/team">Team</Link>
             <Link to="/collaborate">Collaborate</Link>
-            <Link to="/services">Services</Link>
+            <Link to="/service">Services</Link>
         </div>
 
         <div className='logSign-Desktop'>
