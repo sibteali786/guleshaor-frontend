@@ -2,6 +2,19 @@ import React from "react";
 import "./Moto.scss";
 import Button from "@mui/material/Button";
 import motoAsset1 from "./../../Assets/Moto_Assets/Image.png";
+import carousel1 from "./../../Assets/Moto_Assets/Rectangle 5 (2).png";
+// carousel imports 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+const settings = {
+  // dots: true,
+      className: "center",
+      centerMode: true,
+      // centerPadding: "60px",
+      speed: 500,
+      slidesToShow: 3.05,
+};
 const Moto = () => {
   return (
     <div className="moto-container">
@@ -44,6 +57,32 @@ const Moto = () => {
           </p>
           <Button variant="contained">Get In Touch</Button>
         </div>
+      </div>
+      <div className="WhatWeDo">
+        <h3>
+            what we do
+        </h3>
+        <h2>
+        MAKE, MENTOR & TEACH THE
+        LEADERS OF TOMORROW
+        </h2>
+        <Slider {...settings} style={{padding:'0 0'}}>
+          <div>
+            <img src={carousel1} alt = "purpose" />
+          </div>
+          <div>
+          <img src={carousel1} alt = "purpose" />
+          </div>
+          <div>
+          <img src={carousel1} alt = "purpose" />
+          </div>
+          <div>
+          <img src={carousel1} alt = "purpose" />
+          </div>
+          <div>
+          <img src={carousel1} alt = "purpose" />
+          </div>          
+        </Slider>
       </div>
     </div>
   );
