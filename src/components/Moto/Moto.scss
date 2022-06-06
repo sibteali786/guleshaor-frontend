@@ -211,6 +211,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
+      margin:2rem 0;
       @media (max-width:650px){
         flex-direction: column;
         justify-content: space-evenly;
@@ -261,6 +262,10 @@
       color:#414042;
     }
 
+    }
+      #buttonSection3 {
+      border-radius: 0.2rem;
+      background-color: $tertiaryColor;
     }
   }
 }

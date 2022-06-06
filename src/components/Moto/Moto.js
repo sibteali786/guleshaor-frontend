@@ -178,6 +178,9 @@ const Moto = () => {
             </CardActionArea>
           </Card>
         </div>
+        <Button id="buttonSection3" variant="contained">
+          Collaborate
+        </Button>
       </div>
     </div>
   );
