@@ -6,7 +6,7 @@
     
   }
   .svg-container{
-    position: relative;
+  position: relative;
   background-color: $tertiaryColor;
   height: 50vh;
   font-family: $fontfmily1;
@@ -16,7 +16,7 @@
   justify-content: center;
   .custom-shape-divider-top-1653762327 {
       position: absolute;
-      // top:-55px;
+      top:50vh;
       left: 0;
       width: 100%;
       overflow: hidden;
@@ -39,13 +39,19 @@
   .cardsDiv {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    margin: 2rem 0;
+    justify-content: space-evenly;  
+    margin: 2rem;
     @media (max-width: 650px) {
         flex-direction: column;
         justify-content: space-evenly;
     }
-    .MuiCardActionArea-root {
+    .MuiCard-root {
+      box-shadow: none;
+      background: #ffffff;
+      border-radius:1rem;
+      @media (min-width:1024px){
+        border-radius: 2rem;  
+      }
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -59,13 +65,10 @@
       @media (min-width: 1024px) {
         width: 300px;
       }
-    }
-    .MuiCard-root {
-      box-shadow: none;
-      background: #ffffff;
-      border-radius:1rem;
-      @media (min-width:1024px){
-        border-radius: 2rem;  
+      .MuiCardContent-root{
+        @media(max-width:768px){
+          padding:0;
+        }
       }
       .MuiCardMedia-root {
         border-radius: none;
@@ -95,4 +98,7 @@
       color: #414042;
     }
   }
+}
+.cardsDiv:nth-child(2n+1){
+  
 }

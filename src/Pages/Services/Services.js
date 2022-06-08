@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import "./Services.scss";
 
 // Card Imports
@@ -6,14 +6,36 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import { CardActionArea, Button } from "@mui/material";
 
 // Card Images
 import card1 from "./../../Assets/Moto_Assets/Rectangle 15.png";
 import card2 from "./../../Assets/Moto_Assets/Rectangle 16.png";
 import card3 from "./../../Assets/Moto_Assets/unsplash_Ox6SW103KtM.png";
+import CardActions from '@mui/material/CardActions';
+
+
 
 const Services = () => {
+  const [cardActivate,setCardActivate] = useState(0);
+  
+
+  const handleChange = (event)=>{
+    const indexValue = event.target.getAttribute('index')
+    if(+indexValue === 0){
+      setCardActivate(+indexValue)
+      
+    }else if(+indexValue === 1){
+      setCardActivate(+indexValue)
+      
+    }else if (+indexValue === 2){
+      setCardActivate(+indexValue)
+      
+    }
+  }
+  useEffect(() => {  
+  }, [cardActivate])
+  
   return (
     <div className="service-container">
       <div className="svg-container">
@@ -48,7 +70,6 @@ const Services = () => {
       </div>
       <div className="cardsDiv">
         <Card>
-          <CardActionArea>
             <CardContent>
               <CardMedia
                 component="img"
@@ -64,10 +85,13 @@ const Services = () => {
                 workshop programme delivered at agreed intervals.
               </Typography>
             </CardContent>
-          </CardActionArea>
+          <CardActions>
+            <Button variant="contained" index={0} onClick={handleChange}>
+              Expand
+            </Button>
+          </CardActions>
         </Card>
         <Card>
-          <CardActionArea>
             <CardContent>
               <CardMedia
                 component="img"
@@ -85,10 +109,11 @@ const Services = () => {
                 or studying construction.
               </Typography>
             </CardContent>
-          </CardActionArea>
+            <Button variant="contained" index={1} onClick={handleChange}>
+              Expand
+            </Button>
         </Card>
         <Card>
-          <CardActionArea>
             <CardContent>
               <CardMedia
                 component="img"
@@ -105,9 +130,24 @@ const Services = () => {
                 help us to Elevate The Youth.
               </Typography>
             </CardContent>
-          </CardActionArea>
+            <Button variant="contained" index={2} onClick={handleChange}>
+              Expand
+            </Button>
         </Card>
       </div>
+      <div>
+        {(()=>{
+          if (cardActivate === 0){
+            return <div>One</div>
+          }else if (cardActivate === 1){
+            return <div>Two</div>
+          }else if (cardActivate === 2){
+            return <div>Three</div>
+          }
+        })()}
+        
+      </div>
+
     </div>
   );
 };
