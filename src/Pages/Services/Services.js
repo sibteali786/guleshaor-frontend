@@ -6,7 +6,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea, Button } from "@mui/material";
+import {Button } from "@mui/material";
 
 // Card Images
 import card1 from "./../../Assets/Moto_Assets/Rectangle 15.png";
@@ -150,7 +150,7 @@ const Services = () => {
                   metus, eu imperdiet dui lorem vel lorem. Interdum et malesuada
                   fames ac ante ipsum primis in faucibus.
                 </p>
-                <img src={card4} alt="Image for service section" />
+                <img src={card4} alt="service section" />
               </div>
             );
           } else if (cardActivate === 1) {
