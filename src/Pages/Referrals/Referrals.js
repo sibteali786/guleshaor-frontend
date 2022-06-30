@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
 import "./Referrals.scss";
+import Typography from '@mui/material/Typography'
+
 const Referrals = () => {
   return (
     <div className="referral-container">
-        <h2>Referrals and Partnerships </h2> 
+      <div className="svg-container">
+      <h2>Referrals and Partnerships </h2>
       <div class="custom-shape-divider-top-1653762327">
         <svg
           data-name="Layer 1"
@@ -17,8 +20,57 @@ const Referrals = () => {
           ></path>
         </svg>
       </div>
-    </div>
-  )
-}
 
-export default Referrals
+      </div>
+      <div style={{padding:"2rem"}}>
+        <div className="lowerDivider">
+
+        <Typography variant="h3" >
+            Unpaid Member Ships
+          </Typography>
+        <Typography variant="body2">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim
+          diam vulputate ut pharetra sit amet. In mollis nunc sed id semper
+          risus. Purus non enim praesent elementum facilisis leo vel fringilla
+          est. Etiam dignissim diam quis enim lobortis scelerisque. A
+          condimentum vitae sapien pellentesque habitant morbi tristique.
+          Sollicitudin nibh sit amet commodo nulla. Metus vulputate eu
+          scelerisque felis imperdiet. Volutpat blandit aliquam etiam erat velit
+          scelerisque in dictum non. Fusce id velit ut tortor. Tortor id aliquet
+          lectus proin nibh nisl condimentum id. Vitae semper quis lectus nulla
+          at volutpat diam. Sed faucibus turpis in eu. Tellus in metus vulputate
+          eu scelerisque felis imperdiet. Commodo quis imperdiet massa tincidunt
+          nunc pulvinar sapien et. Scelerisque eu ultrices vitae auctor eu augue
+          ut lectus. Netus et malesuada fames ac. Donec pretium vulputate sapien
+          nec sagittis aliquam malesuada bibendum arcu. Sed nisi lacus sed
+          
+        </Typography>
+        <Typography variant="body2">viverra tellus in. Vel quam elementum pulvinar etiam non quam lacus
+          suspendisse. Vestibulum rhoncus est pellentesque elit ullamcorper
+          dignissim cras tincidunt. Felis imperdiet proin fermentum leo. Egestas
+          tellus rutrum tellus pellentesque eu tincidunt tortor aliquam.
+          Tincidunt dui ut ornare lectus sit amet est placerat in. Nisl suscipit
+          adipiscing bibendum est ultricies integer quis auctor. Enim ut sem
+          viverra aliquet eget sit amet tellus. Varius quam quisque id diam vel
+          quam elementum pulvinar etiam. Habitant morbi tristique senectus et
+          netus et malesuada.</Typography>
+          <Typography variant="h3" >
+            Marignzx
+          </Typography>
+          <Typography variant="body2">viverra tellus in. Vel quam elementum pulvinar etiam non quam lacus
+          suspendisse. Vestibulum rhoncus est pellentesque elit ullamcorper
+          dignissim cras tincidunt. Felis imperdiet proin fermentum leo. Egestas
+          tellus rutrum tellus pellentesque eu tincidunt tortor aliquam.
+          Tincidunt dui ut ornare lectus sit amet est placerat in. Nisl suscipit
+          adipiscing bibendum est ultricies integer quis auctor. Enim ut sem
+          viverra aliquet eget sit amet tellus. Varius quam quisque id diam vel
+          quam elementum pulvinar etiam. Habitant morbi tristique senectus et
+          netus et malesuada.</Typography>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Referrals;
