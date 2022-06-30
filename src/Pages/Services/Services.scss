@@ -7,7 +7,7 @@
   }
   .svg-container{
   position: relative;
-  background-color: $tertiaryColor;
+  background-color: #30363c;
   height: 30vh;
   font-family: $fontfmily1;
   display: flex;
@@ -16,7 +16,7 @@
   justify-content: center;
   .custom-shape-divider-top-1653762327 {
       position: absolute;
-      top:-50vh;
+      top:30vh;
       left: 0;
       width: 100%;
       overflow: hidden;
@@ -38,6 +38,8 @@
 }
   .cardsDiv {
     display: flex;
+    position: relative;
+    top: -10vh;
     flex-direction: row;
     justify-content: space-evenly;  
     margin: 2rem;
