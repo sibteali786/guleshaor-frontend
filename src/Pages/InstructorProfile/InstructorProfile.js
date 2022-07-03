@@ -5,16 +5,23 @@ import {
   Typography,
   TextField,
   IconButton,
+  Box,
 } from "@mui/material";
+import "./../../../node_modules/video-react/dist/video-react.css";
 import React, { useState } from "react";
 import "./InstructorProfile.scss";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import profileImage from "../../Assets/Profiles/Profile Pic.png";
 import instructorImages from "../../Assets/Profiles/instructorImages";
+import Rectangle5 from "../../Assets/Profiles/Rectangle 5.png";
+import Rectangle6 from "../../Assets/Profiles/Rectangle 6.png";
+import Rectangle7 from "../../Assets/Profiles/Rectangle 7.png";
+import Rectangle8 from "../../Assets/Profiles/Rectangle 8.png";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
+import { Player, BigPlayButton } from "video-react";
 const InstructorProfile = () => {
   const [inputFields, setInputFields] = useState([
     {
@@ -106,14 +113,14 @@ const InstructorProfile = () => {
           ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin
           vitae facilisis nisi, ac posuere leo.
         </Typography>
-        
+
         <div
           style={{
             display: "flex",
             flexDirection: "row",
             justifyContent: "flex-start",
             alignItems: "center",
-            flexWrap:"wrap"
+            flexWrap: "wrap",
           }}
         >
           {inputFields.map((inputField, index) => (
@@ -125,40 +132,105 @@ const InstructorProfile = () => {
                 color: "#76A4CE",
                 backgroundColor: "#FFF",
                 borderRadius: "1rem",
-                margin:"0.2rem"
+                margin: "0.2rem",
               }}
             >
               {inputField.inputValue}
             </Button>
           ))}
           <TextField
-          label="Skill"
-          onChange={(e) => {
-            setinputValue(e.target.value);
-          }}
-          size="small"
-        />
-        <IconButton
-          onClick={() => handleAddFields()}
-          style={{
-            color: "#76A4CE",
-            backgroundColor: "#FFF",
-            borderRadius: "2rem",
-            margin: "0.5rem",
-          }}
-        >
-          <AddIcon />
-        </IconButton>
-        <Button variant="text" style={{ fontWeight: "bold", color: "#196AA0" }}>
-          Read More
-        </Button>
+            label="Skill"
+            onChange={(e) => {
+              setinputValue(e.target.value);
+            }}
+            size="small"
+          />
+          <IconButton
+            onClick={() => handleAddFields()}
+            style={{
+              color: "#76A4CE",
+              backgroundColor: "#FFF",
+              borderRadius: "2rem",
+              margin: "0.5rem",
+            }}
+          >
+            <AddIcon />
+          </IconButton>
+          <Button
+            variant="text"
+            style={{ fontWeight: "bold", color: "#196AA0" }}
+          >
+            Read More
+          </Button>
         </div>
       </Container>
-        <Link to="/profile" style={{textDecoration:"none"}}>
-        <Button variant="text" style={{ fontWeight: "bold", color: "#196AA0" }}>
-          More Posts by John Doe
-        </Button>
+      <Container maxWidth="lg">
+        <Link to="/profile" style={{ textDecoration: "none" }}>
+          <Button
+            variant="text"
+            style={{ fontWeight: "bold", color: "#196AA0" }}
+          >
+            More Posts by John Doe
+          </Button>
         </Link>
+      </Container>
+      <Container maxWidth="sm">
+        <h2>Videos</h2>
+        <Player
+          playsInline
+          poster={Rectangle5}
+          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+        >
+          <BigPlayButton position="center" />
+        </Player>
+      </Container>
+      <Container maxWidth="md">
+        <h2>Offered Courses</h2>
+        <div style={{ display: "flex", direction: "row" }}>
+          <Container style={{ maxWidth: "250px" }}>
+            <Player
+              playsInline
+              poster={Rectangle7}
+              src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+            >
+              <BigPlayButton position="center" />
+            </Player>
+          </Container>
+          <Container style={{ maxWidth: "250px" }}>
+            <Player
+              playsInline
+              poster={Rectangle6}
+              src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+            >
+              <BigPlayButton position="center" />
+            </Player>
+          </Container>
+          <Container style={{ maxWidth: "250px" }}>
+            <Player
+              playsInline
+              poster={Rectangle8}
+              src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+            >
+              <BigPlayButton position="center" />
+            </Player>
+          </Container>
+        </div>
+        <Container maxWidth="md">
+          <h2>Students</h2>
+          <Typography variant="body2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
+            turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
+            nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
+            tellus elit sed risus. Maecenas eget condimentum velit, sit amet
+            feugiat lectus. Class aptent taciti sociosqu ad litora torquent per
+            conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus
+            enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.
+            Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum
+            lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in
+            elementum tellus.
+          </Typography>
+        </Container>
+      </Container>
     </div>
   );
 };
