@@ -6,6 +6,7 @@ import {
   TextField,
   IconButton,
   Box,
+  Grid
 } from "@mui/material";
 import "./../../../node_modules/video-react/dist/video-react.css";
 import React, { useState } from "react";
@@ -44,7 +45,9 @@ const InstructorProfile = () => {
   return (
     <div className="Instrcutor-container">
       <div className="backgroundPicture"></div>
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
+        <Grid container spacing={2} alignItems="center" justifyContent="space-evenly">
+        <Grid item >
         <ButtonBase
           sx={{
             width: 150,
@@ -53,19 +56,23 @@ const InstructorProfile = () => {
             top: "-10vh",
             left: "-2vw",
           }}
-        >
+          >
           <img alt="complex" src={profileImage} style={{ width: "100%" }} />
         </ButtonBase>
+        </Grid>
+        <Grid item className="instName">
         <h3>John Doe</h3>
         <a href="email:johnDoe">@johndoe</a>
         <p>Astrophotographer 🌌</p>
         <p>Gamer 👾</p>
+        </Grid>
         <Button
           variant="contained"
           style={{ backgroundColor: "#196AA0", borderRadius: "1.3rem" }}
-        >
+          >
           Follow
         </Button>
+          </Grid>
         <Container maxWidth="sm">
           <h4>Photos</h4>
           <ImageList sx={{ width: 500, height: 450 }} cols={2} rowHeight={164}>
@@ -83,7 +90,7 @@ const InstructorProfile = () => {
           <Button
             variant="text"
             style={{ fontWeight: "bold", color: "#196AA0" }}
-          >
+            >
             More +
           </Button>
         </Container>

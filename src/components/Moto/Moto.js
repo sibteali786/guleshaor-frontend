@@ -54,7 +54,7 @@ const Moto = () => {
     <div className="moto-container">
       <div className="WhoWeAre">
         <div className="span-1">
-          <h3>who we are</h3>
+          <h3 >who we are</h3>
           <div className="imageDiv">
             <img src={motoAsset1} alt="our purpose" />
           </div>
