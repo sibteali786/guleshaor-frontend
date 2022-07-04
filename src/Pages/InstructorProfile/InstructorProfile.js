@@ -82,27 +82,6 @@ const InstructorProfile = () => {
             </Button>
           </Grid>
         </Grid>
-        <Container maxWidth="sm" className="span-2">
-          <h4>Photos</h4>
-          <ImageList sx={{ width: 500, height: 450 }} cols={2} rowHeight={164}>
-            {instructorImages.map((item) => (
-              <ImageListItem key={item.img}>
-                <img
-                  src={item.img}
-                  srcSet={item.img}
-                  alt={item.title}
-                  loading="lazy"
-                />
-              </ImageListItem>
-            ))}
-          </ImageList>
-          <Button
-            variant="text"
-            style={{ fontWeight: "bold", color: "#196AA0" }}
-          >
-            More +
-          </Button>
-        </Container>
         <Container
           maxWidth="md"
           style={{ backgroundColor: "#F1F1F1", borderRadius: "1rem" }}
@@ -172,7 +151,7 @@ const InstructorProfile = () => {
                 borderRadius: "2rem",
                 margin: "0.5rem",
               }}
-            >
+              >
               <AddIcon />
             </IconButton>
             <Button
@@ -191,16 +170,6 @@ const InstructorProfile = () => {
               More Posts by John Doe
             </Button>
           </Link>
-        </Container>
-        <Container maxWidth="sm" className="span-4">
-          <h2>Videos</h2>
-          <Player
-            playsInline
-            poster={Rectangle5}
-            src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-          >
-            <BigPlayButton position="center" />
-          </Player>
         </Container>
         <Container maxWidth="md" className="span-5">
           <h2>Offered Courses</h2>
@@ -249,6 +218,37 @@ const InstructorProfile = () => {
             elementum tellus.
           </Typography>
         </Container>
+        <Container maxWidth="sm" className="span-4">
+          <h2>Videos</h2>
+          <Player
+            playsInline
+            poster={Rectangle5}
+            src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          >
+            <BigPlayButton position="center" />
+          </Player>
+        </Container>
+              <Container maxWidth="sm" className="span-2">
+                <h4>Photos</h4>
+                <ImageList cols={2} rowHeight={164}>
+                  {instructorImages.map((item) => (
+                    <ImageListItem key={item.img}>
+                      <img
+                        src={item.img}
+                        srcSet={item.img}
+                        alt={item.title}
+                        loading="lazy"
+                      />
+                    </ImageListItem>
+                  ))}
+                </ImageList>
+                <Button
+                  variant="text"
+                  style={{ fontWeight: "bold", color: "#196AA0" }}
+                >
+                  More +
+                </Button>
+              </Container>
       </Container>
     </div>
   );
