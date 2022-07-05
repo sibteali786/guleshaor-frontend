@@ -8,6 +8,7 @@ import FAQ from './Pages/FAQ/FAQ';
 import Referrals from './Pages/Referrals/Referrals';
 import Services from './Pages/Services/Services';
 import InstructorProfile from './Pages/InstructorProfile/InstructorProfile';
+import UserProfile from './Pages/UserProfile/UserProfile';
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,7 @@ function App() {
       <Route path="/referral" element={<Referrals />} />
       <Route path="/service" element={<Services />} />
       <Route path="/profile" element={<InstructorProfile />} />
+      <Route path="/profileUser" element={<UserProfile />} />
     </Routes>
     <Footer/>
     </div>
