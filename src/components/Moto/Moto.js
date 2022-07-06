@@ -178,9 +178,12 @@ const Moto = () => {
             </CardActionArea>
           </Card>
         </div>
+        <div style={{textAlign:"center"}}>
+
         <Button id="buttonSection3" variant="contained">
           Collaborate
         </Button>
+        </div>
       </div>
     </div>
   );
