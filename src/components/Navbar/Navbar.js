@@ -2,7 +2,8 @@ import React from 'react'
 import "./Navbar.scss";
 import { ReactComponent as Logo } from './../../Assets/LandingPage/logo.svg';
 import { Link } from 'react-router-dom';
-import Button from '@mui/material/Button'
+import Button from '@mui/material/Button';
+import profileImage from "./../../Assets/Profiles/Profile Pic.png"
 const Navbar = () => {
   return (
     <div className='navContainer'>
@@ -24,8 +25,11 @@ const Navbar = () => {
             <Link to="/signIn"><Button variant="contained">
               Sign In
             </Button></Link>
+            <Link to="/profile" >
+            <img src={profileImage} style={{height:"50px",width:"auto"}} alt="profile pic"/>
+            </Link>
         </div>
-
+        
     </div>
   )
 }
