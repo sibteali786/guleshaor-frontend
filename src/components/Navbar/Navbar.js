@@ -3,7 +3,6 @@ import "./Navbar.scss";
 import { ReactComponent as Logo } from './../../Assets/LandingPage/logo.svg';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button'
-import IconButton from '@mui/material/IconButton'
 const Navbar = () => {
   return (
     <div className='navContainer'>
