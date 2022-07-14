@@ -1,7 +1,7 @@
-import Rectangle1 from "./../Profiles/Rectangle 1.png";
-import Rectangle2 from "./../Profiles/Rectangle 2.png";
-import Rectangle3 from "./../Profiles/Rectangle 3.png";
-import Rectangle4 from "./../Profiles/Rectangle 4.png";
+import Rectangle1 from "./Rectangle 1.png";
+import Rectangle2 from "./Rectangle 2.png";
+import Rectangle3 from "./Rectangle 3.png";
+import Rectangle4 from "./Rectangle 4.png";
 
 const instructorImages = [
     {

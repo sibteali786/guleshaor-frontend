@@ -1,9 +1,9 @@
 import React from 'react'
 import "./Navbar.scss";
 import { ReactComponent as Logo } from './../../Assets/LandingPage/logo.svg';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import profileImage from "./../../Assets/Profiles/Profile Pic.png"
+import profileImage from "../../Assets/ProfilesImages/Profile Pic.png"
 const Navbar = () => {
   return (
     <div className='navContainer'>
@@ -11,11 +11,11 @@ const Navbar = () => {
         <Logo className="logo"/>
       </Link>
         <div className='pagesDesktop'>
-            <Link to="/resources">Resources</Link>
-            <Link to="/pricing">Pricing</Link>
-            <Link to="/team">Team</Link>
-            <Link to="/collaborate">Collaborate</Link>
-            <Link to="/service">Services</Link>
+            <NavLink exact="true" aciveclassname="active" to="/mentors">Mentors</NavLink>
+            <NavLink exact="true" aciveclassname="active" to="/pricing">Pricing</NavLink>
+            <NavLink exact="true" aciveclassname="active" to="/team">Team</NavLink>
+            <NavLink exact="true" aciveclassname="active" to="/collaborate">Collaborate</NavLink>
+            <NavLink exact="true" aciveclassname="active" to="/service">Services</NavLink>
         </div>
 
         <div className='logSign-Desktop'>
@@ -25,7 +25,7 @@ const Navbar = () => {
             <Link to="/signIn"><Button variant="contained">
               Sign In
             </Button></Link>
-            <Link to="/profile" >
+            <Link to="/" >
             <img src={profileImage} style={{height:"50px",width:"auto"}} alt="profile pic"/>
             </Link>
         </div>

@@ -14,11 +14,11 @@ import "./UserProfile.scss";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 // All the images in the page used
-import profileImage from "../../Assets/Profiles/Profile Pic.png";
-import instructorImages from "../../Assets/Profiles/instructorImages";
-import Rectangle5 from "../../Assets/Profiles/Rectangle 5.png";
-import user1 from "../../Assets/Profiles/Ellipse1.png";
-import user2 from "../../Assets/Profiles/Ellipse2.png";
+import profileImage from "../../Assets/ProfilesImages/Profile Pic.png";
+import instructorImages from "../../Assets/ProfilesImages/instructorImages";
+import Rectangle5 from "../../Assets/ProfilesImages/Rectangle 5.png";
+import user1 from "../../Assets/ProfilesImages/Ellipse1.png";
+import user2 from "../../Assets/ProfilesImages/Ellipse2.png";
 import AddIcon from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
 import { Player, BigPlayButton } from "video-react";

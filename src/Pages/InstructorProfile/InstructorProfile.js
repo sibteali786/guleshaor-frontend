@@ -14,27 +14,20 @@ import "./InstructorProfile.scss";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 // All the images in the page used 
-import profileImage from "../../Assets/Profiles/Profile Pic.png";
-import instructorImages from "../../Assets/Profiles/instructorImages";
-import Rectangle5 from "../../Assets/Profiles/Rectangle 5.png";
-import Rectangle6 from "../../Assets/Profiles/Rectangle 6.png";
-import Rectangle7 from "../../Assets/Profiles/Rectangle 7.png";
-import Rectangle8 from "../../Assets/Profiles/Rectangle 8.png";
 import AddIcon from "@mui/icons-material/Add";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Player, BigPlayButton } from "video-react";
+import users from "../../users";
 const InstructorProfile = () => {
-  const [inputFields, setInputFields] = useState([
-    {
-      inputValue: "#photography",
-    },
-  ]);
+  const match = useParams();
+  const user = users.find(p => p.id === match.id);
+  const [inputFields, setInputFields] = useState(user.skills);
   const [inputValue, setinputValue] = useState("");
   const handleAddFields = () => {
     if (inputValue === "") {
       console.log("Not Allowed");
     } else {
-      setInputFields([...inputFields, { inputValue }]);
+      setInputFields([...inputFields, inputValue]);
     }
   };
   // For collapsing the read more panel 
@@ -64,13 +57,16 @@ const InstructorProfile = () => {
                 top: "-10vh",
               }}
             >
-              <img alt="complex" src={profileImage} style={{ width: "100%" }} />
+              <img alt={user.name} src={user.profilePicture} style={{ width: "100%" }} />
             </ButtonBase>
             <Grid item style={{ marginLeft: "2rem" }}>
-              <h3>John Doe</h3>
-              <a href="email:johnDoe">@johndoe</a>
-              <p>Astrophotographer 🌌</p>
-              <p>Gamer 👾</p>
+              <h3>{user.name}</h3>
+              <a href="email:johnDoe">{user.username}</a>
+              {user.hobbies.map((hobby,idx) => (
+                <p key={idx}>
+                  {hobby}
+                </p>
+              ) )}
             </Grid>
           </Grid>
           <Grid item>
@@ -87,31 +83,13 @@ const InstructorProfile = () => {
           style={{ backgroundColor: "#F1F1F1", borderRadius: "1rem" }}
           className="span-3"
         >
-          <Collapse in={checked} collapsedSize={200}>
+          <Collapse in={checked} collapsedSize={150}>
 
-          <h2>How Astrophotography changed my life</h2>
+          <h2>{user.descriptionHeading}</h2>
           <Typography variant="body2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-            turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-            nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-            tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-            feugiat lectus. Class aptent taciti sociosqu ad litora torquent per
-            conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus
-            enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.
-            Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum
-            lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in
-            elementum tellus. Curabitur tempor quis eros tempus lacinia. Nam
-            bibendum pellentesque quam a convallis. Sed ut vulputate nisi.
-            Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu
-            sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend
-            magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices
-            nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla
-            varius volutpat turpis sed lacinia. Nam eget mi in purus lobortis
-            eleifend. Sed nec ante dictum sem condimentum ullamcorper quis
-            venenatis nisi. Proin vitae facilisis nisi, ac posuere leo.
+            {user.description}
           </Typography>
           </Collapse>
-
           <div
             style={{
               display: "flex",
@@ -133,7 +111,7 @@ const InstructorProfile = () => {
                   margin: "0.2rem",
                 }}
               >
-                {inputField.inputValue}
+                #{inputField}
               </Button>
             ))}
             <TextField
@@ -165,65 +143,41 @@ const InstructorProfile = () => {
           <Link to="/profile" style={{ textDecoration: "none" }}>
             <Button
               variant="text"
-              style={{ fontWeight: "bold", color: "#196AA0" }}
+              style={{ fontWeight: "bold", color: "#196AA0", textTransform:"capitalize" }}
             >
-              More Posts by John Doe
+              More Posts by {user.name}
             </Button>
           </Link>
         </Container>
         <Container maxWidth="md" className="span-5">
           <h2>Offered Courses</h2>
           <div style={{ display: "flex", direction: "row" }}>
-            <Container style={{ maxWidth: "250px" }}>
+            {user.offeredCoursesVideosPosters.map((poster,idx) => (
+            <Container key={idx} style={{ maxWidth: "250px" }}>
               <Player
                 playsInline
-                poster={Rectangle7}
-                src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+                poster={poster}
+                src={user.video}
               >
                 <BigPlayButton position="center" />
               </Player>
             </Container>
-            <Container style={{ maxWidth: "250px" }}>
-              <Player
-                playsInline
-                poster={Rectangle6}
-                src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-              >
-                <BigPlayButton position="center" />
-              </Player>
-            </Container>
-            <Container style={{ maxWidth: "250px" }}>
-              <Player
-                playsInline
-                poster={Rectangle8}
-                src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-              >
-                <BigPlayButton position="center" />
-              </Player>
-            </Container>
+
+            ))}
           </div>
         </Container>
         <Container maxWidth="md" className="span-6">
           <h2>Students</h2>
           <Typography variant="body2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-            turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-            nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-            tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-            feugiat lectus. Class aptent taciti sociosqu ad litora torquent per
-            conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus
-            enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.
-            Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum
-            lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in
-            elementum tellus.
+            {user.studentDescription}
           </Typography>
         </Container>
         <Container maxWidth="sm" className="span-4">
           <h2>Videos</h2>
           <Player
             playsInline
-            poster={Rectangle5}
-            src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+            poster={user.videoPoster}
+            src={user.video}
           >
             <BigPlayButton position="center" />
           </Player>
@@ -231,12 +185,12 @@ const InstructorProfile = () => {
               <Container maxWidth="sm" className="span-2">
                 <h4>Photos</h4>
                 <ImageList cols={2} rowHeight={164}>
-                  {instructorImages.map((item) => (
+                  {user.otherImages.map((item) => (
                     <ImageListItem key={item.img}>
                       <img
-                        src={item.img}
-                        srcSet={item.img}
-                        alt={item.title}
+                        src={item}
+                        srcSet={item}
+                        alt={user.name}
                         loading="lazy"
                       />
                     </ImageListItem>
